@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/07affa367f.js" crossorigin="anonymous"></script>
+    <title>Generador de contraseñas</title>
+</head>
+<body>
+    <main>
+        <div class="password-container">
+            <h1>Generador de Contraseñas</h1>
+            <div class="text-container">
+                <input type="text" id="password" placeholder="Tu contraseña">
+                <button class="btn-copy" onclick="copiarTexto()" title="Copiar Contraseña"><span class="span-copy">Copiar Contraseña</span> <i class="fa-solid fa-copy"></i></button>
+            </div>
+            <button class="btn-gen" onclick="contrasena = generarContrasena(lengthvalue)" title="Generar Contraseña">Generar Contraseña <i class="fa-solid fa-rotate"></i></button>
+            <div class="slider-container">
+                <label for="lengthSlider" class="lengthall">Longitud: <span id="lengthValue">12</span></label>
+                <input type="range" id="lengthSlider" min="6" max="30" value="12">
+            </div>
+        </div>
+    </main>
+    <script>
+            function generarContrasena() {
+                let longitud = lengthvalue.textContent
+                const caracteres = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789!¡@#$%^&*()_+~,.:;-/°|{}[]<>¿?";
+                let contrasena = "";
+                let ultimoCaracter = "";
+                for (let i = 0; i < longitud; i++) {
+                    let randomIndex;
+                    let nuevoCaracter;
+                    do {
+                        randomIndex = Math.floor(Math.random() * caracteres.length);
+                        nuevoCaracter = caracteres[randomIndex];
+                    } while (nuevoCaracter === ultimoCaracter); // Evita caracteres consecutivos iguales
+                    contrasena += nuevoCaracter;
+                    ultimoCaracter = nuevoCaracter; // Guarda el último carácter para la siguiente iteración
+                }
+                document.getElementById("password").value = contrasena
+                return contrasena
+                }
+            function copiarTexto() {
+                let contrasena = document.getElementById("password").value
+                navigator.clipboard.writeText(contrasena)
+                    .then(() => alert("Contraseña copiada al portapapeles"))
+                    .catch(err => console.error("Error al copiar: ", err));
+                }
+            const lengthSlider = document.getElementById("lengthSlider")
+            const lengthvalue = document.getElementById("lengthValue")
+            lengthSlider.addEventListener("input", function(){
+                passwordLength = this.value;
+                lengthvalue.textContent = passwordLength
+            })
+    
+    </script>
+</body>
+</html>
