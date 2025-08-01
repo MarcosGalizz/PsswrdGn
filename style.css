@@ -87,6 +87,9 @@ button:hover{
 }
 
 @media (max-width: 550px) {
+    main{
+        margin-top: -10vh;
+    }
     .password-container{
         width: 20rem;
         height: 30rem;
