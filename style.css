@@ -8,7 +8,7 @@ main{
     background-color: rgb(230, 223, 223);
     display: flex;
     justify-content: center;
-    padding-top: 20vh;
+    align-items: center;
     width: 100dvw;
     height: 100dvh;
     overflow: hidden;
@@ -87,9 +87,6 @@ button:hover{
 }
 
 @media (max-width: 550px) {
-    main{
-        padding-top: 0;
-    }
     .password-container{
         width: 20rem;
         height: 30rem;
