@@ -35,9 +35,9 @@
                     do {
                         randomIndex = Math.floor(Math.random() * caracteres.length);
                         nuevoCaracter = caracteres[randomIndex];
-                    } while (nuevoCaracter === ultimoCaracter); // Evita caracteres consecutivos iguales
+                    } while (nuevoCaracter === ultimoCaracter);
                     contrasena += nuevoCaracter;
-                    ultimoCaracter = nuevoCaracter; // Guarda el último carácter para la siguiente iteración
+                    ultimoCaracter = nuevoCaracter;
                 }
                 document.getElementById("password").value = contrasena
                 return contrasena
