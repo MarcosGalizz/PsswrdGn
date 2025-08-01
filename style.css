@@ -81,16 +81,12 @@ button:hover{
 }
 .lengthall{
     font-size: 18px;
-    color: #0b845b;
 }
 #lengthSlider:hover{
     cursor: pointer;
 }
 
 @media (max-width: 600px) {
-    main{
-        margin-top: -10vh;
-    }
     .password-container{
         width: 20rem;
         height: 30rem;
