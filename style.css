@@ -11,6 +11,8 @@ main{
     padding-top: 20vh;
     width: 100dvw;
     height: 100dvh;
+    overflow: hidden;
+    touch-action: none;
 }
 .password-container{
     width: 30rem;
