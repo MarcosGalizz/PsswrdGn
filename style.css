@@ -5,11 +5,11 @@
 }
 main{
     background-color: rgb(230, 223, 223);
+    height: calc(100vh - 5rem);
     display: flex;
     justify-content: center;
     padding-top: 20vh;
     width: 100dvw;
-    height: 100dvh;
 }
 .password-container{
     width: 30rem;
